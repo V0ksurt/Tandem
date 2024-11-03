@@ -12,7 +12,7 @@
 			class="inter-14"
 			style="position: absolute; top: 100px; left: 19.35%; color: #afafaf"
 		>
-			УСЛУГИ И ЦЕНЫ!
+			УСЛУГИ И ЦЕНЫ
 		</p>
 
 		<div
