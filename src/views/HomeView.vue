@@ -109,19 +109,13 @@
 			</v-btn>
 		</v-hover>
 	</div>
-	<AboutTheStudio></AboutTheStudio>
-	<Portfolio></Portfolio>
-	<ServicesAndPrices></ServicesAndPrices>
 </template>
 
 <script>
-import AboutTheStudio from './AboutTheStudio.vue'
-import Portfolio from './Portfolio.vue'
-import ServicesAndPrices from './ServicesAndPrices.vue'
 
 export default {
 	name: 'HomeView',
-	components: { AboutTheStudio, Portfolio, ServicesAndPrices },
+	components: {},
 
 	data: function () {
 		return {
@@ -145,11 +139,22 @@ export default {
 	src: url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 }
 
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$addmobSize: $addSize + $addSize * 0.7;
+	@media (max-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+	}
+	@media (mix-width: 767px) {
+		font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+	}
+}
+
 .poiret-one-regular {
 	font-family: 'Poiret One', sans-serif;
 	font-weight: 400;
 	font-style: normal;
-	font-size: 24px;
+	@include adaptiv-font(24, 12);
 }
 
 .poiret-165 {
